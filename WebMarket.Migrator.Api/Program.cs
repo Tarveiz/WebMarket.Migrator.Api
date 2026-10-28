@@ -1,4 +1,4 @@
-using WebMarket.Migrator.Api.Infrastructure.Extensions;
+using WebMarket.Migrator.Helpers.Extensions;
 using WebMarket.Migrator.Services;
 using WebMarket.Migrator.Services.Interfaces;
 using WebMarket.Migrator.Settings.Secrets;
@@ -14,7 +14,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         if (Directory.Exists(VaultSecretsDirectory))
             foreach (var file in Directory.EnumerateFiles(VaultSecretsDirectory, "*.json").Order())
-                builder.Configuration.AddJsonFile(file, optional: true, reloadOnChange: true); // Секреты, отрендеренные Vault Agent
+                builder.Configuration.AddJsonFile(file, optional: true, reloadOnChange: true);
 
         ConfigureServices(builder.Services, builder.Configuration);
 
