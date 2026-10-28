@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="WebMarket.Migrator.Api/WebMarket.Migrator.Api.csproj" />
+  <Project Path="WebMarket.Migrator/WebMarket.Migrator.csproj" />
+</Solution>

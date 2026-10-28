@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="dbup-postgresql" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Npgsql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Migrations\**\*.sql" />
+    <EmbeddedResource Include="Migrations\Versioned\**\*.sql" LogicalName="Versioned/%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="Migrations\Repeatable\**\*.sql" LogicalName="Repeatable/%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>
