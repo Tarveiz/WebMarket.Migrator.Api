@@ -12,7 +12,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["nuget.config", "Directory.Build.props", "Directory.Packages.props", "./"]
+COPY ["nuget.config", "./"]
 COPY ["WebMarket.Migrator.Api/WebMarket.Migrator.Api.csproj", "WebMarket.Migrator.Api/"]
 COPY ["WebMarket.Migrator/WebMarket.Migrator.csproj", "WebMarket.Migrator/"]
 RUN dotnet restore "./WebMarket.Migrator.Api/WebMarket.Migrator.Api.csproj"
